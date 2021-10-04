@@ -1,0 +1,38 @@
+{% extends 'app/base.html' %}
+
+{% block content %}
+
+<section class="text-gray-600 body-font">
+    <div class="container px-2 pt-12 pb-0 mb-20 mx-auto flex flex-wrap">
+        <div class="catch_copy w-5/12 text-left  self-center">
+            <h3 class="font-serif text-2xl mb-2">入力データ</h3>
+            <p class="mb-1">都道府県 : {{ prefecture }}</p>
+            <p class="mb-1">市区町村名 : {{ city }}</p>
+            <p class="mb-1">地区名 : {{ district }}</p>
+            <p class="mb-1">最寄駅：名称 : {{ station_name }}</p>
+            <p class="mb-1">最寄駅：距離（分） : {{ station_distance }}</p>
+            <p class="mb-1">間取り : {{ floor_plan }}</p>
+            <p class="mb-1">面積（㎡） : {{ area }}</p>
+            <p class="mb-1">建築年 : {{ age }}</p>
+            <p class="mb-1">建物の構造 : {{ structure }}</p>
+            <p class="mb-1">用途 : {{ use }}</p>
+            <p class="mb-1">今後の利用目的 : {{ use_after }}</p>
+            <p class="mb-1">都市計画 : {{ city_planning }}</p>
+            <p class="mb-1">建ぺい率（％） : {{ floor_area_ratio }}</p>
+            <p class="mb-1">容積率（％） : {{ volume }}</p>
+            <p class="mb-1">取引時点 : {{ transaction }}</p>
+            <p class="mb-1">改装 : {{ reform }}</p>
+            <p>取引の事情等 : {{ caution }}</p>
+        </div>
+        <div class="lg:w-7/12 md:w-6/12 bg-white rounded-lg p-8 flex flex-col text-center justify-center md:ml-auto w-full md:mt-0 mb-20 relative z-10 shadow-lg">
+            <h1 class="leading-relaxed text-4xl mb-14">予測結果</h1>
+            <h4 class='mb-10 text-3xl'>{{ pred }}(万円)</h4>
+            <a href="{% url 'index' %}">
+                <button class="self-center text-white bg-green-500 border-0 mt-3 py-2 px-6 ml-2 focus:outline-none hover:bg-green-600 rounded text-lg"
+                type="submit">予測画面に戻る →</button>
+            </a>
+        </div>
+    </div>
+</section>
+
+{% endblock %}
